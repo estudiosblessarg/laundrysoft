@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f4f4f4;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 10px;
+}
+
+#menuBtn {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.btnMenu {
+  width: 40px;
+  height: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btnMenu span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Animación a X */
+.btnMenu.active span:nth-child(1) {
+  transform: translateY(13px) rotate(45deg);
+}
+
+.btnMenu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.btnMenu.active span:nth-child(3) {
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+.container {
+  display: flex;
+}
+
+aside {
+  width: 200px;
+  background: #333;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+aside button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 15px;
+  cursor: pointer;
+  text-align: left;
+}
+
+aside button:hover {
+  background: #444;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+}
+
+input {
+  display: block;
+  margin: 5px 0;
+  padding: 8px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.card {
+  background: white;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  aside {
+    position: absolute;
+    left: -200px;
+    transition: 0.3s;
+  }
+
+  aside.active {
+    left: 0;
+  }
+}

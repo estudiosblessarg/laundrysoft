@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Empleado Dashboard</title>
+  <link rel="stylesheet" href="./css/stylesAdmin.css">
+</head>
+<body>
+
+<header>
+    <button id="menuBtn">☰</button>
+  <h1>Dashboard</h1>
+</header>
+
+<div class="container">
+
+  <aside id="sidebar">
+    <button onclick="showSection('clientes')">Clientes</button>
+    <button onclick="showSection('pedidos')">Pedidos</button>
+    <button onclick="showSection('reportes')">Reportes</button>
+  </aside>
+
+  <main>
+
+    <!-- CLIENTES -->
+    <section id="clientes">
+      <h2>Registrar Cliente</h2>
+
+      <input type="text" id="nombre" placeholder="Nombre">
+      <input type="text" id="apellido" placeholder="Apellido">
+      <input type="text" id="telefono" placeholder="1122334455">
+
+      <button onclick="guardarCliente()">Guardar</button>
+
+      <h3>Lista de Clientes</h3>
+      <div id="listaClientes"></div>
+    </section>
+
+    <!-- PEDIDOS -->
+    <section id="pedidos" style="display:none;">
+      <h2>Nuevo Pedido</h2>
+
+      <input type="text" id="filtroCliente" placeholder="Buscar cliente">
+      <div id="clientesFiltrados"></div>
+
+      <input type="number" id="bolsas" placeholder="Cantidad de bolsas">
+      <input type="number" id="precioPedido" placeholder="Precio del pedido">
+
+      <button onclick="crearPedido()">Crear Pedido</button>
+
+      <h3>Lista de Pedidos</h3>
+      <div id="listaPedidos"></div>
+    </section>
+
+    <!-- REPORTES -->
+    <section id="reportes" style="display:none;">
+      <h2>Historial de Procesos</h2>
+      <div id="listaReportes"></div>
+    </section>
+
+  </main>
+
+</div>
+
+<script src="./js/empleado.js"></script>
+</body>
+</html>
